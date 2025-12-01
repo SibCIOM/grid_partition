@@ -1,12 +1,11 @@
 .SUFFIXES:	.c .f90 .o
 
-FOPTS  = -g -traceback
+FOPTS  = -g -traceback -132 -fpp
 LOADOPTS = $(FOPTS)
 
 MAIN    = a.out
 
-DEPS    = metis_interface, mpi_tools, domain, test
-# DEPS    = metis_interface, test_PartGraphRecursive2
+DEPS    = metis_interface, mpi_tools, domain, telecom, test
 
 OBJS    = $(DEPS:,=.o).o
 
@@ -14,9 +13,9 @@ CC = mpicc
 FORTRAN	= mpiifort 
 LDR	= mpiifort  
 
-METIS_PATH = /usr/local
+METIS_PATH = metis
 
-LIBPATH = -L${METIS_PATH}/lib/ -lmetis
+LIBPATH = -L${METIS_PATH}/lib -lmetis
 INCPATH	= -I${METIS_PATH}/include
 
 default:	all	
