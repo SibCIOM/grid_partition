@@ -5,7 +5,7 @@ LOADOPTS = $(FOPTS)
 
 MAIN    = a.out
 
-DEPS    = metis_interface, mpi_tools, domain, telecom, test
+DEPS    = metis_interface, mpi_tools, domain, telecom, main
 
 OBJS    = $(DEPS:,=.o).o
 
